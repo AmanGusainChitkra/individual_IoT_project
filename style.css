@@ -1,0 +1,12 @@
+body { 
+    background: url(resources/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  title{
+    background-color: rgb(80, 80, 208);
+    color: white;
+  }
