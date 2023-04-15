@@ -1,0 +1,85 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    color: #666;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
+}
+.welcomeBody {
+    background: url(resources/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  title {
+    background-color: rgb(80, 80, 208);
+    color: white;
+  }
+  
+  .heading1 {
+    background-color: rgba(19, 20, 28, 0.344);
+    border-radius: 30px;
+    min-height: 30%;
+    padding: 2%;
+    max-width: 35%;
+    margin-top: 10%;
+  }
+
+  
+  .btn {
+    background-color: rgba(80, 101, 139, 0.678);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: rgb(136, 164, 173);
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar{
+    background-color: #0062cc;
+  }
+  

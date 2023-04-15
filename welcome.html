@@ -8,21 +8,31 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Circular+Std" rel="stylesheet">
+
 </head>
 
-<body>
- 
-    <div class="col-sm-3 ">
-        <div class="row">
-                <div class="title">
-                <h1>Smart Building</h1>
-            </div>
-        </div>
+<body class="welcomeBody">
+    <div id="navbar-placeholder"></div>
+
+
+    <div class="container heading1 ">
+        <h1 class="text-center display-4 welcome">Welcome to our Smart Building!</h1>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <div class="container row buttons">
+        <div class="col-sm button1"> <button class="btn button1">Devices</button></div>
+        <div class="col-sm button1"> <button class="btn button1">Register New Device</button></div>
+        <div class="col-sm button1"> <button class="btn button1">Show Stats</button></div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("navbar.html");
+            });
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 
 </body>
 
