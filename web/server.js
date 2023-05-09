@@ -1,16 +1,20 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-
-const port = 5000
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const port = 3000
 const base = `${__dirname}/public`
 
+app.use(cors())
 app.use(express.static('public'));
 app.use(express.static('public/js'))
 app.use(express.static('public/css'))
 app.use(express.static('public/img'))
+app.use(morgan('tiny'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}))
 
-app.use(morgan('tiny'))
 
 app.get('/login', function (req, res) {
   res.sendFile(`${base}/login.html`);

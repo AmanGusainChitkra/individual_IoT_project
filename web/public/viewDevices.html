@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./css/style_viewDevice.css">
+</head>
+
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="navigation">
+    <ul>
+
+      <li class="list active" id="security">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="shield-checkmark-outline"></ion-icon>
+          </span>
+          <span class="text">Security</span>
+        </a>
+      </li>
+      <li class="list " id="light">
+        <a href="#">
+          <span class="icon">
+            <ion-icon name="bulb-outline"></ion-icon>
+          </span>
+          <span class="text">Lighting</span>
+        </a>
+      </li>
+      <li class="list ">
+        <a href="#" id="ac">
+          <span class="icon">
+            <ion-icon name="help-buoy-outline"></ion-icon>
+          </span>
+          <span class="text">AC</span>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+
+  </div>
+
+
+
+  <div class="cards" id="lightC">
+    <div class="card">
+      <h2>Light</h2>
+      <p>Lorem ipsum dolor sit amet</p>
+      <input type="color" id="color-picker">
+      <label class="switch">
+        <input type="checkbox" class="input__check">
+        <span class="slider"></span>
+      </label>
+      <button class="submit"> UPDATE</button>
+    </div>
+  </div>
+
+
+
+  <div class="cards" id="acC">
+    <div class="card">
+      <h2>AC</h2>
+      <p>Lorem ipsum dolor sit amet</p>
+      <label class="switch">
+        <input type="checkbox" class="input__check">
+        <span class="slider"></span>
+      </label>
+      <button class="submit"> UPDATE</button>
+      <div class="spinner">
+        <div class="spinnerin"></div>
+      </div>
+      <button class="fanB plus" data-step="1"><ion-icon name="add-outline"></ion-icon></button>
+      <span class="fan_speed" data-speed="0">0</span>
+      <button class="fanB minus" data-step="-1"><ion-icon name="remove-outline"></ion-icon></button>
+    </div>
+  </div>
+
+
+  <div class="cards" id="securityC">
+    <div class="card">
+      <h2>Security 1</h2><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <label class="switch">
+        <input type="checkbox" class="input__check">
+        <span class="slider"></span>
+      </label>
+      <button class="btn delete btn-delete">
+        <span class="mdi mdi-delete mdi-24px"></span>
+        <span class="mdi mdi-delete-empty mdi-24px"></span>
+      </button>
+      <h3>Motion Sense: </h3>
+      <label class="switch motion">
+        <input type="checkbox" class="input__checkM">
+        <span class="slider"></span>
+      </label>
+      <button class="submit"> UPDATE</button>
+
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./js/viewDevice.js">
+
+  </script>
+</body>
+
+</html>

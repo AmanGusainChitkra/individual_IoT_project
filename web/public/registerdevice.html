@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Device Registration</title>
 	<!-- Add Bootstrap stylesheet -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- Add custom CSS styling -->
-	<link rel="stylesheet" href="./css/style_register.css">	
+	<link rel="stylesheet" href="./css/style_registerDevice.css">
 </head>
+
 <body>
 	<!-- The navbar -->
-    <div id="navbar-placeholder"></div>
+	<div id="navbar-placeholder"></div>
 
 	<div class="container">
 		<h1>Device Registration Form</h1>
 		<form id="device-form">
 			<div class="form-group">
 				<label for="name">Device Name:</label>
-				<input type="text" class="form-control" id="name" name="name">
+				<input type="text" class="form-control" id="name" name="name" required>
 			</div>
 			<div class="form-group">
 				<label for="description">Description:</label>
@@ -30,12 +32,12 @@
 				<label for="category">Category:</label>
 				<select class="form-control" id="category" name="category">
 					<option value="security">Security</option>
-					<option value="climate">Climate Control</option>
-					<option value="lighting">Lighting</option>
-					<option value="energy">Energy Management</option>
+					<option value="ac">AC devices</option>
+					<option value="light">Lighting</option>
 				</select>
 			</div>
-			<button type="submit" class="btn btn-primary btn-block">Register Device</button>
+			<button type="submit" class="btn btn-primary btn-block" id="registerD">Register Device</button>
+			<div class="error"></div>
 		</form>
 	</div>
 
@@ -43,12 +45,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="app.js"></script>
-	<script>
-        $(function () {
-            $("#navbar-placeholder").load("navbar.html");
-        });
-    </script>
-	
+	<script src="./js/app.js"></script>
+
 </body>
+
 </html>
