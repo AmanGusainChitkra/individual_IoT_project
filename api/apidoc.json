@@ -1,0 +1,7 @@
+{
+    "name":"Individual",
+    "version": "1.0.0",
+    "description": "List of APi endpoints",
+    "title": "Individual API endpoints",
+    "url": "http://localhost:5000"
+}

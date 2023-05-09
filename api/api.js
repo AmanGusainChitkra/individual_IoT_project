@@ -13,7 +13,7 @@ const app = express()
 mongoose.connect(link, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(console.log("FUck"));
+}).then(console.log("Connected to mongodb"));
 
 app.use(morgan('tiny'));
 app.use(cors());
@@ -25,10 +25,26 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   next()
 })
-app.get('/test', async (req, res) => {
-  res.send("The api is not working");
-})
 
+
+/**
+* @api {post} /rdevice Post Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*  [
+*    
+* {
+*  "name": "Device Name",
+*  "description": "Device description",
+*  "location": "locatoin of device",
+*  "category":"security"
+* }
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "Name Already Exists"
+*  }
+*/
 app.post('/rdevice', async (req, res) => {
   const { name, description, location, category } = req.body
   console.log(req.body)
@@ -51,6 +67,25 @@ app.post('/rdevice', async (req, res) => {
   }
 });
 
+/**
+* @api {put} /udeviceLight Put Device: Change data of Light devices
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*  [
+*    
+* {
+*  "id": "id8f8sf",
+*  "data": {
+*   "status":false,
+*   "color": "#3h3h3h"
+* }
+* }
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.put('/udeviceLight', async (req, res) => {
   const { id } = req.body;
   const data = {
@@ -73,6 +108,26 @@ app.put('/udeviceLight', async (req, res) => {
     res.status(500).send({ error: 'Internal server error' });
   }
 });
+
+/**
+* @api {put} /udeviceAC Put Device: Change data of AC devices
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*  [
+*    
+* {
+*  "id": "id8f8sf",
+*  "data": {
+*   "status":false,
+*   "fanspeed": "34"
+* }
+* }
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.put('/udeviceAC', async (req, res) => {
   const { id } = req.body;
   const data = {
@@ -96,6 +151,25 @@ app.put('/udeviceAC', async (req, res) => {
   }
 });
 
+/**
+* @api {put} /udeviceSecurity Put Device: Change data of Security devices
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*  [
+*    
+* {
+*  "id": "id8f8sf",
+*  "data": {
+*   "status":false,
+*   "motionDetect": false
+* }
+* }
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.put('/udeviceSecurity', async (req, res) => {
   const { id } = req.body;
   const data = {
@@ -120,6 +194,31 @@ app.put('/udeviceSecurity', async (req, res) => {
 });
 
 
+/**
+* @api {get} /devices Get All Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+* [
+*    {
+*        "_id": "6458fbd691e93c44d75dc338",
+*        "name": "Bulb1",
+*        "description": "This is rgb bulb",
+*        "location": "Room 126, second floor",
+*        "category": "light",
+*        "createdAt": "2023-05-08T13:40:38.836Z",
+*        "updatedAt": "2023-05-08T22:44:27.038Z",
+*        "__v": 0,
+*        "data": {
+*            "status": true,
+*            "color": "#c62424"
+*        }
+*    },
+* ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.get('/devices', async (req, res) => {
   await device.find({}).then((data) => {
     res.send(data)
@@ -127,6 +226,31 @@ app.get('/devices', async (req, res) => {
 
 })
 
+/**
+* @api {get} /ac Get All AC Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+* [
+*     {
+*         "_id": "645938c8eacc4c39bc76a31f",
+*         "name": "Pixel 6",
+*         "description": "Shravels phone",
+*         "location": "113",
+*         "category": "ac",
+*         "createdAt": "2023-05-08T18:00:40.226Z",
+*         "updatedAt": "2023-05-08T22:37:30.599Z",
+*         "__v": 0,
+*         "data": {
+*             "status": true,
+*             "fanspeed": 7
+*         }
+*     }
+* ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 
 app.get('/ac', async (req, res) => {
   try {
@@ -138,6 +262,32 @@ app.get('/ac', async (req, res) => {
   }
 })
 
+
+/**
+* @api {get} /security Get All Security Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+* [
+*     {
+*         "_id": "64597e50657a7befe3b0fc16",
+*         "name": "CCTV",
+*         "description": "Room 1",
+*         "location": "Corridor",
+*         "category": "security",
+*         "createdAt": "2023-05-08T22:57:21.223Z",
+*         "updatedAt": "2023-05-08T23:03:49.093Z",
+*         "__v": 0,
+*         "data": {
+*             "status": false,
+*             "motionDetect": true
+*         }
+*     }
+* ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.get('/security', async (req, res) => {
   try {
     const data = await device.find({ category: 'security' })
@@ -149,6 +299,31 @@ app.get('/security', async (req, res) => {
   }
 })
 
+/**
+* @api {get} /light Get All light Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*[
+*    {
+*        "_id": "6458fbd691e93c44d75dc338",
+*        "name": "Bulb1",
+*        "description": "This is rgb bulb",
+*        "location": "Room 126, second floor",
+*        "category": "light",
+*        "createdAt": "2023-05-08T13:40:38.836Z",
+*        "updatedAt": "2023-05-08T22:44:27.038Z",
+*        "__v": 0,
+*        "data": {
+*            "status": true,
+*            "color": "#c62424"
+*        }
+*    },
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 app.get('/light', async (req, res) => {
   try {
     const data = await device.find({ category: 'light' })
@@ -158,6 +333,21 @@ app.get('/light', async (req, res) => {
     res.status(500).send('Server Error')
   }
 })
+
+/**
+* @api {delete} /deletedevices Delete a Device
+* @apiGroup Device
+* @apiSuccessExample {json} Success-Response:
+*[
+*   {
+*   "_id": "6458fbd691e93c"
+* }
+*  ]
+* @apiErrorExample {json} Error-Response:
+*  {
+*    "No such device"
+*  }
+*/
 
 app.delete('/deletedevices', async (req, res) => {
   const { id } = req.body;
@@ -174,6 +364,8 @@ app.delete('/deletedevices', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+
 
 
 app.listen(port, () => {
