@@ -20,17 +20,25 @@
     </div>
 
     <div class="container row buttons">
-        <div class="col-sm button1"> <button class="btn button1">Devices</button></div>
-        <div class="col-sm button1"> <button class="btn button1">Register New Device</button></div>
-        <div class="col-sm button1"> <button class="btn button1">Show Stats</button></div>
+        <div class="col-sm button1"> <button class="btn button1" data-href="/viewdevice">Devices</button></div>
+        <div class="col-sm button1"> <button class="btn button1" data-href="/registerdevice">Register New Device</button>
+        </div>
+        <div class="col-sm button1"> <button class="btn button1" data-href="/charts">Show Stats</button></div>
     </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(function () {
-                $("#navbar-placeholder").load("navbar.html");
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar-placeholder").load("navbar.html");
+        });
+        $(document).ready(function () {
+            $('.button1 button').click(function () {
+                var href = $(this).data('href');
+                window.location.href = href;
             });
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        });
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
 </body>

@@ -1,0 +1,8 @@
+*{
+    margin:0;
+}
+#navbar-placeholder{
+    position:fixed(important);
+    z-index: 1;
+    left:0(important);
+}

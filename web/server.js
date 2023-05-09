@@ -59,7 +59,6 @@ app.get('/register', (req, res)=>{
 })
 
 
-
 app.get('/registerdevice', isAuthenticated, (req, res)=>{
   res.sendFile(`${base}/registerdevice.html`);
 })
