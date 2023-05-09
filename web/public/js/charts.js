@@ -1,3 +1,7 @@
+$(function () {
+    $("#navbar-placeholder").load("navbar.html");
+  });
+  
 fetch('http://localhost:5001/sensorData')
     .then(response => response.json())
     .then(data => {
