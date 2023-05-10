@@ -5,7 +5,7 @@ $(document).ready(function () {
         const password = $('input[name="password"]').val();
 
         console.log((email, password))
-        $.post('http://localhost:3000/login', { email, password }, function (data) {
+        $.post('https://smartindi.onrender.com/login', { email, password }, function (data) {
             // handle successful login response
             window.location.href = '/welcome'; // redirect to dashboard page
         }).fail(function (xhr) {
