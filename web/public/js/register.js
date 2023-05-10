@@ -9,7 +9,7 @@ $(document).ready(function() {
       }, {});
   
       // Send the form data to the API endpoint using $.post()
-      $.post('http://localhost:5000/register', formData)
+      $.post('http://localhost:3000/register', formData)
         .done(function(response) {
           console.log(response);
           location.href = '/login';

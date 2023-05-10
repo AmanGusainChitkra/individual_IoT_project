@@ -36,7 +36,7 @@ $('#security').on('click', () => {
 })
 
 
-$.get('http://localhost:5000/light', (res) => {
+$.get('https://apismartindi.onrender.com/light', (res) => {
   const light = res;
   console.log(res);
   light.forEach((device) => {
@@ -55,7 +55,7 @@ $.get('http://localhost:5000/light', (res) => {
       console.log('ID: ', id);
 
       $.ajax({
-        url: 'http://localhost:5000/deletedevices',
+        url: 'https://apismartindi.onrender.com/deletedevices',
         type: 'DELETE',
         data:{"id": id},
         success: function(result) {
@@ -98,7 +98,7 @@ $.get('http://localhost:5000/light', (res) => {
       }
 
       $.ajax({
-        url: 'http://localhost:5000/udeviceLight',
+        url: 'https://apismartindi.onrender.com/udeviceLight',
         type: 'PUT',
         data: deviceNewData,
         success: function (response) {
@@ -112,7 +112,7 @@ $.get('http://localhost:5000/light', (res) => {
 
   })
 
-$.get('http://localhost:5000/ac', (res) => {
+$.get('https://apismartindi.onrender.com/ac', (res) => {
   const ac = res;
   console.log(res);
   ac.forEach((device) => {
@@ -130,7 +130,7 @@ $.get('http://localhost:5000/ac', (res) => {
       console.log('ID: ', id);
 
       $.ajax({
-        url: 'http://localhost:5000/deletedevices',
+        url: 'https://apismartindi.onrender.com/deletedevices',
         type: 'DELETE',
         data:{"id": id},
         success: function(result) {
@@ -182,7 +182,7 @@ $.get('http://localhost:5000/ac', (res) => {
       }
 
       $.ajax({
-        url: 'http://localhost:5000/udeviceAC',
+        url: 'https://apismartindi.onrender.com/udeviceAC',
         type: 'PUT',
         data: deviceNewData,
         success: function (response) {
@@ -198,7 +198,7 @@ $.get('http://localhost:5000/ac', (res) => {
   });
 
 
-$.get('http://localhost:5000/security', (res) => {
+$.get('https://apismartindi.onrender.com/security', (res) => {
   const ac = res;
   console.log(res);
   ac.forEach((device) => {
@@ -217,7 +217,7 @@ $.get('http://localhost:5000/security', (res) => {
       console.log('ID: ', id);
 
       $.ajax({
-        url: 'http://localhost:5000/deletedevices',
+        url: 'https://apismartindi.onrender.com/deletedevices',
         type: 'DELETE',
         data:{"id": id},
         success: function(result) {
@@ -255,7 +255,7 @@ $.get('http://localhost:5000/security', (res) => {
       }
 
       $.ajax({
-        url: 'http://localhost:5000/udeviceSecurity',
+        url: 'https://apismartindi.onrender.com/udeviceSecurity',
         type: 'PUT',
         data: deviceNewData,
         success: function (response) {

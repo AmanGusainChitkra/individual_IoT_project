@@ -11,7 +11,7 @@ $('#device-form').on('submit', (event) => {
     deviceData[field.name] = field.value;
   }
 
-  $.post('http://localhost:5000/rdevice', deviceData)
+  $.post('https://apismartindi.onrender.com/rdevice', deviceData)
   .done((response) => {
     console.log(response);
     $('.error').text("Successfully Registered !");

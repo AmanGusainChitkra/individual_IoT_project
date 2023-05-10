@@ -2,7 +2,7 @@ $(function () {
     $("#navbar-placeholder").load("navbar.html");
   });
   
-fetch('http://localhost:5001/sensorData')
+fetch('https://mqttsmartindi.onrender.com/sensorData')
     .then(response => response.json())
     .then(data => {
         const chartData = data.map(item => [item.timestamp, item.value]);
